@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="viewport" id="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function check() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (check()) {
+            console.log("pc")
+        } else {
+            console.log("phone");
+            var e = screen.width / 750;
+            document.getElementById("viewport").content = "width=750,initial-scale=" + e + ",minimum-scale=" + e +
+                ",maximum-scale=" + e + ",user-scalable=no"
+        }
+    </script>
+</head>
+
+<body>
+    <div class="doc_navBar animation_down">
+        <span class="but"></span>
+
+    </div>
+</body>
+
+</html>
