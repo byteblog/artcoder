@@ -11,6 +11,26 @@
     <meta name="viewport" id="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function check() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (check()) {
+            console.log("pc")
+        } else {
+            console.log("phone")
+            window.location.href = "moblie.html";
+        }
+    </script>
 </head>
 
 <body>
