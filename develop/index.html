@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<meta name="viewport" id="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<!-- <script src="js/JTP.min.js"></script> -->
+
+	<!-- <script src="js/img.js"></script> -->
+
+	<!-- <script src="js/main.js"></script> -->
+	<script>
+		function check() {
+			var userAgentInfo = navigator.userAgent;
+			var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+			var flag = true;
+			for (var v = 0; v < Agents.length; v++) {
+				if (userAgentInfo.indexOf(Agents[v]) > 0) {
+					flag = false;
+					break;
+				}
+			}
+			return flag;
+		}
+		if (check()) {
+			console.log("pc")
+			window.location.href = "pc.html";
+		} else {
+			console.log("phone")
+			window.location.href = "moblie.html";
+		}
+	</script>
+
+</body>
+
+</html>
